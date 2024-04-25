@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cine</title>
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--google icono-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--animación cac movies-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!--css propio-->
+    <link rel="stylesheet" href="styles.css">
+    <!--css propio-->
+
+    <style>
+        .cover-section {
+        height: 65vh; 
+        background-image: url('https://image.tmdb.org/t/p/original/q6y5cjHFiFBEb7ILYrEllOiC4ww.jpg'); 
+        background-size: cover; 
+        background-position: center; 
+        margin-bottom: 0;
+        animation: fadeIn;
+        animation-duration: 4s;
+        }
+    </style>
+   
+
+</head>
+
+<body>
+    <header class="px-4 py-2">
+        <!-- Menú superior -->
+        <nav class="d-flex justify-content-between align-items-center">
+            <!-- Icono e inicio de sesión -->
+            <a href="../index.html" class="linksSinDecoration">
+                <div class="d-flex align-items-center">
+                    <span class="material-symbols-outlined mx-1">movie_info</span>
+                    <span class="nav-brand d-flex align-items-center">G13 - Movies</span>
+                </div>
+            </a>
+    
+            <!-- Links izquierda -->
+            <div class="links d-flex align-items-center"> 
+                <ul class="d-flex align-items-center mb-0"> 
+                    <!-- Buscador -->
+                    <li class="mx-3 d-flex align-items-center">
+                        <input type="text" name="ver" id="ver" placeholder="Buscar..." class="bg-dark w-50 rounded-4 px-3 py-1" onclick="this.style.width = '100%';">
+                    </li>
+                    <!-- Lo más visto -->
+                    <li class="mx-3 d-flex align-items-center">
+                        <a href="../tendencias.html">Lo más visto</a>
+                    </li>
+                    <!-- Registro -->
+                    <li class="mx-3 d-flex align-items-center">
+                        <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdropRegistro">Registrate</a>
+                    </li>
+                    <!-- Iniciar sesión -->
+                    <li class="mx-3 d-flex align-items-center">
+                        <a href="" class="d-flex align-items-center btn btn-link" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin">
+                            <span class="material-symbols-outlined mx-1">input</span>
+                            <span>Iniciar sesión</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Modal de registro-->
+    <div class="modal fade" id="staticBackdropRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Registro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Formulario de registro-->
+                <div class="modal-body">
+                    <form action="servidorRegistro.html" method="post">
+                        <div class="form-floating mb-3 mx-3">
+                            <input type="texto" class="form-control" name="nombre" id="fname" placeholder="Nombre"
+                                required>
+                            <!-- frase de fondo-->
+                            <label for="fname">Nombre</label>
+                        </div>
+
+                        <div class="form-floating mb-3 mx-3">
+                            <input type="texto" class="form-control" name="apellido" id="flastname"
+                                placeholder="Apellido" required>
+                            <label for="flastname">Apellido</label>
+                        </div>
+
+                        <div class="form-floating mb-3 mx-3">
+                            <input type="texto" class="form-control" name="email" id="femail" placeholder="Email"
+                                required>
+                            <label for="femail">Email</label>
+                        </div>
+
+                        <div class="form-floating mb-3 mx-3">
+                            <input type="password" class="form-control" name="contraseña" id="fpassword"
+                                placeholder="Contraseña" required>
+                            <label for="fpassword">Contraseña</label>
+                        </div>
+                        <!--términos y condiciones-->
+                        <div class="form-check mb-3 mx-5">
+                            <input class="form-check-input" type="radio" name="terminos" id="fterminos">
+                            <label class="form-check-label" for="terminos">
+                                Acepto términos y condiciones
+                            </label>
+                        </div>
+
+                        <div class="botones-registro">
+                            <input type="submit" value="Enviar" class="btn btn-success">
+                            <button type="button" class="btn btn-danger">Cancelar</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de login-->
+    <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Formulario de login-->
+                <div class="modal-body">
+                    <form action="servidorLogin.html" method="post">
+                        <div class="form-floating mb-3 mx-3">
+                            <input type="texto" class="form-control" name="email" id="femail" placeholder="Email"
+                                required>
+                            <label for="femail">Email</label>
+                        </div>
+
+                        <div class="form-floating mb-3 mx-3">
+                            <input type="password" class="form-control" name="contraseña" id="fpassword"
+                                placeholder="Contraseña" required>
+                            <label for="fpassword">Contraseña</label>
+                        </div>
+
+                        <div class="botones-registro">
+                            <input type="submit" value="Ingresar" class="btn btn-success">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <main>
+         <!--portada-->
+        <section class="cover-section"></section>
+         <!--detalles de la pelicula-->
+        <section class="movie-details mb-0">
+            <div class="container">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-lg-6">
+                        <img src="https://image.tmdb.org/t/p/w185/tkS4Z9A0USEqDZ7oFJiA3DrXG4V.jpg" class="img-fluid rounded mb-2 mt-2" alt="Imagen de la película">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2>Miedo</h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <p>Género: <span id="genero">Terror</span></p>
+                            </div>
+                            <div class="col-6">
+                                <p>Año: <span id="año">2023</span></p>
+                            </div>
+                        </div>
+                        <p>Sinopsis: Una escapada muy necesaria y un fin de semana de celebración se convierte en una pesadilla debido a la contagiosa amenaza aérea.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!--videos-->
+        <section class="video-carousel mt-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-wrap="false">
+                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Trailer</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Ver Online</span>
+                            </a>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TWIrbn3fVIE?si=Xo8kccNNYzFWoG7S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                                </div>
+                                <div class="carousel-item">
+                                    <div id='07b02207602203a02204505904807304906204107304406306104802207d' style='height:450px;width:720px'></div><script data-cfasync='false' src='data:text/javascript;base64,dmFyIHBhID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnc2NyaXB0Jyk7IAp2YXIgcyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdzY3JpcHQnKVswXTsgCiAgICBwYS5zcmMgPSAnaHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2xvYWRlcm1haW4uYXBwc3BvdC5jb20vbWFpbi5qcyc7CiAgICBzLnBhcmVudE5vZGUuaW5zZXJ0QmVmb3JlKHBhLCBzKTs='></script>                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    </main>
+    
+    <!--boton volver-->
+    <button id="volver" class="shadow volver"><img src="../IMG/arriba.png" alt=""></button>
+
+    <!--pie de página-->
+    <footer>
+        <div class="footer-links">
+            <a href="">Términos y condiciones</a>
+            <a href="">Avisos legales</a>
+            <a href="">Preguntas frecuentes</a>
+            <a href="">Privacidad</a>
+            <a href="">Contactanos</a>
+            <a href="">Términos de uso</a>
+            <a href="https://fast.com/es/">Prueba de velocidad</a>
+    
+        </div>
+        
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("volver").style.display = "block";
+            } else {
+                document.getElementById("volver").style.display = "none";
+            }
+        }
+
+        document.getElementById("volver").addEventListener("click", function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0; 
+        });
+    </script>
+</body>
+
+</html>
