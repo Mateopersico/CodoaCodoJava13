@@ -113,14 +113,14 @@ header {
 
 }
 
-#femail {
+#email {
     border-radius: 15px;
     border: 3px solid #000000;
     color: rgb(0, 0, 0);
 
 }
 
-#fpassword {
+#password {
     border-radius: 15px;
     border: 3px solid #000000;
     color: rgb(0, 0, 0);
@@ -138,7 +138,7 @@ header {
 }
 
 .modal-body {
-    background-image: linear-gradient(90deg, rgb(20, 20, 20), rgb(130, 130, 130));
+    background-image: linear-gradient(90deg, rgb(130, 130, 130), rgb(50, 50, 50));
 }
 
 #buscador {
