@@ -200,11 +200,11 @@ header {
 }
 
 .pelicula {
-    position: relative; /* Establece la posición relativa para el contenedor */
+    position: relative; 
 }
 
 .pelicula img {
-    width: 100%; /* Ajusta el tamaño de la imagen */
+    width: 100%; 
     transition: transform 0.3s ease;
     border-radius: 4%;
 }
@@ -219,7 +219,7 @@ header {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 0.5em; /* Ajusta el espacio alrededor del texto */
+    padding: 0.5em; 
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -238,9 +238,9 @@ header {
 
 .titulo {
     color: white;
-    font-size: 1em; /* Tamaño de fuente relativo */
+    font-size: 1em; 
     font-weight: bold;
-    max-width: 100%; /* Ajusta el texto al tamaño de la imagen */
+    max-width: 100%; 
 }
 
 .peliculas {
@@ -262,8 +262,8 @@ header {
 }
 
 .volver img {
-    width: 50px; /* Ancho deseado */
-    height: auto; /* Altura ajustada automáticamente */
+    width: 50px; 
+    height: auto; 
 }
 
 .volver:hover {
@@ -285,4 +285,47 @@ header {
 .gallery img:hover {
     transform: scale(1.1);
     z-index: 1;
+}
+
+.pelicula-detalle-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.pelicula-detalle {
+    display: flex;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px;
+}
+
+.pelicula-detalle img {
+    border-radius: 10px;
+    margin-right: 20px;
+    max-width: 200px;
+    flex-shrink: 0; 
+    object-fit: cover; 
+}
+
+.pelicula-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1; 
+}
+
+.pelicula-info h1 {
+    margin: 0 0 10px 0;
+    color: #fefefe;
+}
+
+.pelicula-info p {
+    margin: 5px 0;
+    color: #fefefe;
 }

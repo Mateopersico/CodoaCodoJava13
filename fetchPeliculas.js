@@ -7,12 +7,11 @@ const options = {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    getCienciaFiccion()
-    getEstrenos()
-    getPopulares()
-    getTerror()
-})
-
+    getCienciaFiccion();
+    getEstrenos();
+    getPopulares();
+    getTerror();
+});
 
 function getPopulares() {
     fetch('https://api.themoviedb.org/3/movie/popular?language=es', options)
@@ -21,43 +20,34 @@ function getPopulares() {
         .catch(err => console.error(err));
 
     function listarPopulares(response) {
-        const peliculas = response.results
-        let rows = ''
+        const peliculas = response.results;
+        let rows = '';
         for (let pelicula of peliculas) {
             rows += `
         <div class="col-md-2">
-        <a href="" class="pelicula">
+        <a href="#" class="pelicula" data-pelicula='${JSON.stringify(pelicula)}'>
             <div class="overlay">
                 <span class="titulo">${pelicula.title}</span>
             </div>
             <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}" alt="Portada" class="img-fluid">
         </a>
         </div>
-                `
+                `;
         }
 
-        document.querySelector("#popular").innerHTML = rows
+        document.querySelector("#popular").innerHTML = rows;
 
-
-        /*for (let pelicula of peliculas) {
-            rows += `
-            <tr>
-            <th>${pelicula.title}</th>
-            <td>${pelicula.release_date}</td>
-            <td>${pelicula.vote_average}</td>
-            <td> <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}">
-            </td>
-            
-            </tr>
-            
-            `
-        }
-    
-        document.querySelector("#tbody").innerHTML = rows*/
-
-
+        document.querySelectorAll('.pelicula').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pelicula = JSON.parse(this.getAttribute('data-pelicula'));
+                localStorage.setItem('peliculaSeleccionada', JSON.stringify(pelicula));
+                window.location.href = 'detallepeli.html'; 
+            });
+        });
     }
 }
+
 
 function getEstrenos() {
     fetch('https://api.themoviedb.org/3/movie/now_playing?language=es', options)
@@ -66,89 +56,68 @@ function getEstrenos() {
         .catch(err => console.error(err));
 
     function listarEstrenos(response) {
-        const peliculas = response.results
-        let rows = ''
+        const peliculas = response.results;
+        let rows = '';
         for (let pelicula of peliculas) {
             rows += `
                 <div class="col-md-2">
-                <a href="" class="pelicula">
+                <a href="#" class="pelicula" data-pelicula='${JSON.stringify(pelicula)}'>
                     <div class="overlay">
                         <span class="titulo">${pelicula.title}</span>
                     </div>
                     <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}" alt="Portada" class="img-fluid">
                 </a>
                 </div>
-                        `
+                        `;
         }
 
-        document.querySelector("#estrenos").innerHTML = rows
+        document.querySelector("#estrenos").innerHTML = rows;
 
-
-        /*for (let pelicula of peliculas) {
-            rows += `
-            <tr>
-            <th>${pelicula.title}</th>
-            <td>${pelicula.release_date}</td>
-            <td>${pelicula.vote_average}</td>
-            <td> <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}">
-            </td>
-            
-            </tr>
-            
-            `
-        }
-    
-        document.querySelector("#tbody").innerHTML = rows*/
-
-
+        document.querySelectorAll('.pelicula').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pelicula = JSON.parse(this.getAttribute('data-pelicula'));
+                localStorage.setItem('peliculaSeleccionada', JSON.stringify(pelicula));
+                window.location.href = 'detallepeli.html';
+            });
+        });
     }
 }
 
 function getUpcoming() {
-
     fetch('https://api.themoviedb.org/3/movie/upcoming?language=es', options)
         .then(response => response.json())
         .then(response => listarUpcoming(response))
         .catch(err => console.error(err));
+
     function listarUpcoming(response) {
-        const peliculas = response.results
-        let rows = ''
+        const peliculas = response.results;
+        let rows = '';
         for (let pelicula of peliculas) {
             rows += `
                 <div class="col-md-2">
-                <a href="" class="pelicula">
+                <a href="#" class="pelicula" data-pelicula='${JSON.stringify(pelicula)}'>
                     <div class="overlay">
                         <span class="titulo">${pelicula.title}</span>
                     </div>
                     <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}" alt="Portada" class="img-fluid">
                 </a>
                 </div>
-                        `
+                        `;
         }
 
-        document.querySelector("#proximamente").innerHTML = rows
+        document.querySelector("#proximamente").innerHTML = rows;
 
-
-        /*for (let pelicula of peliculas) {
-            rows += `
-            <tr>
-            <th>${pelicula.title}</th>
-            <td>${pelicula.release_date}</td>
-            <td>${pelicula.vote_average}</td>
-            <td> <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}">
-            </td>
-            
-            </tr>
-            
-            `
-        }
-    
-        document.querySelector("#tbody").innerHTML = rows*/
-
-
+        document.querySelectorAll('.pelicula').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pelicula = JSON.parse(this.getAttribute('data-pelicula'));
+                localStorage.setItem('peliculaSeleccionada', JSON.stringify(pelicula));
+                window.location.href = 'detallepeli.html';
+            });
+        });
     }
 }
-
 
 function getCienciaFiccion() {
     fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es&page=1&sort_by=popularity.desc&with_genres=878', options)
@@ -157,28 +126,33 @@ function getCienciaFiccion() {
         .catch(err => console.error(err));
 
     function listarCienciaFiccion(response) {
-        const peliculas = response.results
-        let rows = ''
+        const peliculas = response.results;
+        let rows = '';
         for (let pelicula of peliculas) {
             rows += `
                 <div class="col-md-2">
-                <a href="" class="pelicula">
+                <a href="#" class="pelicula" data-pelicula='${JSON.stringify(pelicula)}'>
                     <div class="overlay">
                         <span class="titulo">${pelicula.title}</span>
                     </div>
                     <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}" alt="Portada" class="img-fluid">
                 </a>
                 </div>
-                        `
-
+                        `;
         }
 
-        document.querySelector("#scifi").innerHTML = rows
+        document.querySelector("#scifi").innerHTML = rows;
 
-
+        document.querySelectorAll('.pelicula').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pelicula = JSON.parse(this.getAttribute('data-pelicula'));
+                localStorage.setItem('peliculaSeleccionada', JSON.stringify(pelicula));
+                window.location.href = 'detallepeli.html';
+            });
+        });
     }
 }
-
 
 function getTerror() {
     fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=es&page=1&sort_by=popularity.desc&with_genres=27', options)
@@ -187,24 +161,30 @@ function getTerror() {
         .catch(err => console.error(err));
 
     function listarTerror(response) {
-        const peliculas = response.results
-        let rows = ''
+        const peliculas = response.results;
+        let rows = '';
         for (let pelicula of peliculas) {
             rows += `
                 <div class="col-md-2">
-                <a href="" class="pelicula">
+                <a href="#" class="pelicula" data-pelicula='${JSON.stringify(pelicula)}'>
                     <div class="overlay">
                         <span class="titulo">${pelicula.title}</span>
                     </div>
                     <img src="https://image.tmdb.org/t/p/w200/${pelicula.poster_path}" alt="Portada" class="img-fluid">
                 </a>
                 </div>
-                        `
-
+                        `;
         }
 
-        document.querySelector("#terror").innerHTML = rows
+        document.querySelector("#terror").innerHTML = rows;
 
-
+        document.querySelectorAll('.pelicula').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.preventDefault();
+                const pelicula = JSON.parse(this.getAttribute('data-pelicula'));
+                localStorage.setItem('peliculaSeleccionada', JSON.stringify(pelicula));
+                window.location.href = 'detallepeli.html';
+            });
+        });
     }
 }
