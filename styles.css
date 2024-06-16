@@ -45,7 +45,6 @@ header {
     animation-duration: 2s;
 }
 
-
 #banner {
     background-image: url(img/watching-tv-popcorn-cord-cutting-featured.png);
     background-size: cover;
@@ -99,6 +98,7 @@ header {
     animation-duration: 2s;
 }
 
+/*formulario registro*/
 #fname {
     border-radius: 15px;
     border: 3px solid #000000;
@@ -113,6 +113,21 @@ header {
 
 }
 
+#femail {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+
+#fpassword {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+
+/*formulario iniciar sesión*/
 #email {
     border-radius: 15px;
     border: 3px solid #000000;
@@ -120,13 +135,12 @@ header {
 
 }
 
-#password {
+#pass {
     border-radius: 15px;
     border: 3px solid #000000;
     color: rgb(0, 0, 0);
 
 }
-
 #fterminos {
     border-radius: 15px;
     border: 3px solid #000000;
@@ -329,3 +343,119 @@ header {
     margin: 5px 0;
     color: #fefefe;
 }
+
+/* texto términos y condiciones*/
+.terminos-condiciones{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+    
+}
+
+/*puntos términos y condiciones*/
+.titulos{
+    color: rgb(150, 38, 255);
+}
+
+.emailEmpresa{
+    color: rgba(122, 253, 0, 0.727);
+}
+
+.avisos-legales{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.preguntas-frecuentes{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.privacidad{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.contacto{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.contacto a:hover {
+    text-decoration: none;
+    color: rgb(203, 254, 0);
+    transform: scale(1.1);
+}
+
+.redes {
+    list-style: none;
+}
+.gracias{
+    color: #00ff51;
+    font-size: 50px;
+    padding-right: 15px;
+}
+
+.pregunta {
+    color: #00ff51;
+    font-size: 50px;
+    padding-right: 15px;
+}
+
+.terminos-usos{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+/*texto cuando te registras*/
+#registro{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
