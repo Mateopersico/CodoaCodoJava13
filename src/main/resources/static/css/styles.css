@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: rgb(39, 39, 39);
+
+}
+
+header {
+    background-color: crimson;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+
+}
+
+.links a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.links a:hover {
+    text-decoration: none;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    transform: scale(1.1);
+}
+
+.links li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.linksSinDecoration {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.linksSinDecoration:hover {
+    text-decoration: none;
+    animation: pulse;
+    animation-duration: 3s;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))
+}
+
+#banner {
+    background-image: url(../img/cinema-tickets-popcorn.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    box-shadow: inset 0 0 0 2000px rgba(107, 107, 107, 0.5);
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 120px auto;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card-banner {
+    margin: 0 auto;
+    text-align: center;
+    padding: 0px 160px;
+}
+
+.card-banner h1 {
+    color: #fefefe;
+    font-size: 4vw;
+}
+
+.btn {
+    color: rgb(0, 0, 0);
+    /*letra del botón iniciar sesión*/
+}
+
+.botones-registro {
+    text-align: center;
+    margin-top: 3%;
+    padding: 0px 0px;
+
+}
+
+
+/*formulario registro*/
+#fname {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+
+#flastname {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+
+#femail {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+
+#fpassword {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+
+/*formulario iniciar sesión*/
+#email {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+
+#pass {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(0, 0, 0);
+
+}
+#fterminos {
+    border-radius: 15px;
+    border: 3px solid #000000;
+    color: rgb(255, 255, 255);
+}
+
+.modal-header {
+    background-image: linear-gradient(90deg, rgb(220, 20, 60), rgb(255, 0, 123));
+}
+
+.modal-body {
+    background-image: linear-gradient(90deg, rgb(130, 130, 130), rgb(50, 50, 50));
+}
+
+#buscador {
+    height: 180px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(33, 37, 41)
+    
+    ;
+}
+
+.bg-dark {
+    border: 1px solid #1a1a1a;
+    border-radius: 2;
+    color: whitesmoke;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.5))
+}
+
+.bg-dark:hover {
+    animation: pulse;
+    animation-duration: 15s;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex;
+    padding: 1%;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    background-color: #1f1f1f;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fefefe;
+    transition: transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.volver {
+    display: none;
+    position: fixed;
+    bottom: 10%; 
+    right: 1%;
+    z-index: 99;
+    cursor: pointer;
+    transition: opacity 0.5s;
+    background: 0;
+    border: 0;
+}
+
+.volver img {
+    width: 50px; 
+    height: auto; 
+}
+
+.volver:hover {
+    opacity: 0.7;
+}
+
+
+/* texto términos y condiciones*/
+.terminos-condiciones{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+    
+}
+
+/*puntos términos y condiciones*/
+.titulos{
+    color: rgb(150, 38, 255);
+}
+
+.emailEmpresa{
+    color: rgba(122, 253, 0, 0.727);
+}
+
+.avisos-legales{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.preguntas-frecuentes{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.privacidad{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.contacto{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.contacto a:hover {
+    text-decoration: none;
+    color: rgb(203, 254, 0);
+    transform: scale(1.1);
+}
+
+.redes {
+    list-style: none;
+}
+.gracias{
+    color: #00ff51;
+    font-size: 50px;
+    padding-right: 15px;
+}
+
+.pregunta {
+    color: #00ff51;
+    font-size: 50px;
+    padding-right: 15px;
+}
+
+.terminos-usos{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+/*texto cuando te registras*/
+#registro{
+    margin: 15px;
+    padding: 15px;
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    background-color: #837f7f54;
+    color: #e4e4e4;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+#buscarBtn {
+    margin-left: 10px;
+}
+
+.movie-poster {
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-poster img {
+    width: 100%;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.movie-poster:hover img {
+    transform: scale(1.05);
+    filter: brightness(50%);
+}
+
+.movie-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.movie-poster:hover .movie-title {
+    opacity: 1;
+}
+
+
+.bg-dark-red {
+    background-color: crimson;
+    color: whitesmoke;
+}
+.table th button, .table th, .table td {
+    color: #b0b0b0;
+}
+.table th button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+.form-label {
+    color: #b0b0b0;
+}
+.table tbody tr td {
+    color: #808080;
+}
+
+#peliculas td {
+vertical-align: middle; /* Centra verticalmente el contenido de las celdas */
+}
+
+#peliculas td {
+vertical-align: middle; /* Centra verticalmente el contenido de las celdas */
+background-color: inherit; /* Mantiene el fondo de las celdas consistente con la tabla */
+}
+
+#peliculas .btn {
+margin-bottom: 5px; /* Espacio entre botones */
+}
+
+#peliculas .operaciones-cell {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: transparent; /* Mantiene el fondo de las celdas consistente con la tabla */
+border: none;
+}
+
+#buscarBtn {
+    color: white;
+    background-color: #2c74b8;
+}
+
+#ver {
+    width: 100%;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.banner-text {
+    animation: zoomIn 0.2s ease-in-out;
+    font-size: 50px;
+}
+
+#btn-primary {
+    color: whitesmoke
+}
+
+.btitulo {
+    flex: 1; /* Ocupa todo el espacio disponible */
+    margin-right: 50px; /* Espacio a la derecha del título */
+    color: #ffffff; /* Color del texto */
+    font-size: 50px; /* Tamaño del texto */
+    white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) si el texto es demasiado largo */
+}
+
+.ver-mas-btn {
+    background-color: #2c74b8;
+    color: #fff;
+    float: right;
+    margin-top: 10px;
+}
+
+.transparente {
+    background-color: transparent;
+}
+
+.genero-container {
+    margin-bottom: 40px; /* Ajusta el valor según tus necesidades */
+}
+
+.buscador-text {
+    animation: zoomIn 0.2s ease-in-out;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Mínima altura de la pantalla completa */
+}
+
+main {
+    flex: 1; 
+}
